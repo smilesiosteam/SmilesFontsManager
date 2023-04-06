@@ -15,10 +15,6 @@ extension UIFont.TextStyle {
     public static let headline4 = UIFont.TextStyle(rawValue: TypographyFontStyles.headline4.rawValue)
     public static let headline5 = UIFont.TextStyle(rawValue: TypographyFontStyles.headline5.rawValue)
     
-    public static let title1 = UIFont.TextStyle(rawValue: TypographyFontStyles.title1.rawValue)
-    public static let title2 = UIFont.TextStyle(rawValue: TypographyFontStyles.title2.rawValue)
-    public static let title3 = UIFont.TextStyle(rawValue: TypographyFontStyles.title3.rawValue)
-    
     public static let subtitle1 = UIFont.TextStyle(rawValue: TypographyFontStyles.subtitle1.rawValue)
     public static let subtitle2 = UIFont.TextStyle(rawValue: TypographyFontStyles.subtitle2.rawValue)
     
