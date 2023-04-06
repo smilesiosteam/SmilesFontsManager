@@ -5,10 +5,12 @@ import CoreText
 
 public class SmilesFontsManager {
     
+    public static let defaultAppFont: SmilesFonts = SmilesFonts.circular
+    
     public static func registerFonts() {
         let fonts = getAvailableFontsList()
         fonts.forEach {
-            registerFont(bundle: .module, fontName: $0.rawValued(), fontExtension: "ttf")
+            registerFont(bundle: .module, fontName: $0, fontExtension: "ttf")
         }
     }
     
@@ -24,12 +26,12 @@ public class SmilesFontsManager {
         
     }
     
-    private static func getAvailableFontsList() -> [SmilesFonts] {
+    private static func getAvailableFontsList() -> [String] {
         
-        var fonts = [SmilesFonts]()
-        let circular: [SmilesFonts] = [.circular(.bold), .circular(.book), .circular(.light), .circular(.medium), .circular(.regular)]
-        let lato: [SmilesFonts] = [.lato(.black), .lato(.blackItalic), .lato(.bold), .lato(.boldItalic), .lato(.hairLine), .lato(.italic), .lato(.light), .lato(.lightItalic), .lato(.medium), .lato(.regular), .lato(.semiBold)]
-        let montserrat: [SmilesFonts] = [.montserrat(.bold), .montserrat(.extraBold), .montserrat(.medium), .montserrat(.regular), .montserrat(.semiBold)]
+        var fonts = [String]()
+        let circular: [String] = [SmilesFonts.circular.getFontName(fontStyle: .bold), SmilesFonts.circular.getFontName(fontStyle: .book), SmilesFonts.circular.getFontName(fontStyle: .light), SmilesFonts.circular.getFontName(fontStyle: .medium), SmilesFonts.circular.getFontName(fontStyle: .regular)]
+        let lato: [String] = [SmilesFonts.lato.getFontName(fontStyle: .black), SmilesFonts.lato.getFontName(fontStyle: .blackItalic), SmilesFonts.lato.getFontName(fontStyle: .bold), SmilesFonts.lato.getFontName(fontStyle: .boldItalic), SmilesFonts.lato.getFontName(fontStyle: .hairLine), SmilesFonts.lato.getFontName(fontStyle: .italic), SmilesFonts.lato.getFontName(fontStyle: .light), SmilesFonts.lato.getFontName(fontStyle: .lightItalic), SmilesFonts.lato.getFontName(fontStyle: .medium), SmilesFonts.lato.getFontName(fontStyle: .regular), SmilesFonts.lato.getFontName(fontStyle: .semiBold)]
+        let montserrat: [String] = [SmilesFonts.montserrat.getFontName(fontStyle: .bold), SmilesFonts.montserrat.getFontName(fontStyle: .extraBold), SmilesFonts.montserrat.getFontName(fontStyle: .medium), SmilesFonts.montserrat.getFontName(fontStyle: .regular), SmilesFonts.montserrat.getFontName(fontStyle: .semiBold)]
         fonts.append(contentsOf: circular)
         fonts.append(contentsOf: lato)
         fonts.append(contentsOf: montserrat)

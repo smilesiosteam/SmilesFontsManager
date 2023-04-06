@@ -10,23 +10,23 @@ import UIKit
 
 public enum SmilesFonts {
     
-    case circular(FontStyle)
-    case montserrat(FontStyle)
-    case lato(FontStyle)
+    case circular
+    case montserrat
+    case lato
     
-    func rawValued() -> String {
+    func getFontName(fontStyle: FontStyle) -> String {
         switch self {
-        case .circular(let fontStyle):
+        case .circular:
             return "CircularXXTT-" + fontStyle.rawValue
-        case .montserrat(let fontStyle):
+        case .montserrat:
             return "Montserrat-" + fontStyle.rawValue
-        case .lato(let fontStyle):
+        case .lato:
             return "Lato-" + fontStyle.rawValue
         }
     }
     
-    public func getFont(size: CGFloat) -> UIFont {
-        return UIFont(name: self.rawValued(), size: size) ?? .systemFont(ofSize: size)
+    public func getFont(style: FontStyle, size: CGFloat) -> UIFont {
+        return UIFont(name: self.getFontName(fontStyle: style), size: size) ?? .systemFont(ofSize: size)
     }
     
 }
