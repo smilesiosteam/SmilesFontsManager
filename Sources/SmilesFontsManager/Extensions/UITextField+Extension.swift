@@ -52,6 +52,7 @@ extension UITextField {
             if let textColor = newValue.textColor {
                 self.textColor = textColor
             }
+            
         }
     }
     

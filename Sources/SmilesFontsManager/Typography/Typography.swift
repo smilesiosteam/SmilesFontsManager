@@ -16,7 +16,7 @@ public struct Typography {
     public let pointSize: Float? // base point size for font
     public var letterSpacing: Double = 0
     public var textColor: UIColor?
-    private let textStyle: UIFont.TextStyle
+    public let textStyle: UIFont.TextStyle
     private static let contentSizeCategoryMap: [UIContentSizeCategory: Float] = [
         UIContentSizeCategory.extraSmall: -3,
         UIContentSizeCategory.small: -2,

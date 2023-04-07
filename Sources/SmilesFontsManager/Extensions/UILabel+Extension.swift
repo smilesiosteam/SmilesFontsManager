@@ -59,6 +59,15 @@ extension UILabel {
             if let textColor = newValue.textColor {
                 self.textColor = textColor
             }
+            
+            if newValue.letterSpacing != 0 {
+                let attrString = NSAttributedString(string: self.text ?? "")
+                let spacingString = NSMutableAttributedString(attributedString: attrString)
+                let textRange = NSRange(location: 0, length: attrString.string.count)
+                spacingString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
+                self.attributedText = spacingString
+            }
+            
         }
     }
     

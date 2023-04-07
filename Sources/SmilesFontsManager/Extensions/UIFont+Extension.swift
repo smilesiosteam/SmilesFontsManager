@@ -9,20 +9,25 @@ import UIKit
 
 extension UIFont.TextStyle {
     
-    public static let headline1 = UIFont.TextStyle(rawValue: TypographyFontStyles.headline1.rawValue)
-    public static let headline2 = UIFont.TextStyle(rawValue: TypographyFontStyles.headline2.rawValue)
-    public static let headline3 = UIFont.TextStyle(rawValue: TypographyFontStyles.headline3.rawValue)
-    public static let headline4 = UIFont.TextStyle(rawValue: TypographyFontStyles.headline4.rawValue)
-    public static let headline5 = UIFont.TextStyle(rawValue: TypographyFontStyles.headline5.rawValue)
+    public static let smilesHeadline1 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesHeadline1.rawValue)
+    public static let smilesHeadline2 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesHeadline2.rawValue)
+    public static let smilesHeadline3 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesHeadline3.rawValue)
+    public static let smilesHeadline4 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesHeadline4.rawValue)
+    public static let smilesHeadline5 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesHeadline5.rawValue)
     
-    public static let subtitle1 = UIFont.TextStyle(rawValue: TypographyFontStyles.subtitle1.rawValue)
-    public static let subtitle2 = UIFont.TextStyle(rawValue: TypographyFontStyles.subtitle2.rawValue)
+    public static let smilesTitle1 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesTitle1.rawValue)
+    public static let smilesTitle2 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesTitle2.rawValue)
+    public static let smilesTitle3 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesTitle3.rawValue)
     
-    public static let body1 = UIFont.TextStyle(rawValue: TypographyFontStyles.body1.rawValue)
-    public static let body2 = UIFont.TextStyle(rawValue: TypographyFontStyles.body2.rawValue)
-    public static let body3 = UIFont.TextStyle(rawValue: TypographyFontStyles.body3.rawValue)
+    public static let smilesSubtitle1 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesSubtitle1.rawValue)
+    public static let smilesSubtitle2 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesSubtitle2.rawValue)
     
-    public static let label1 = UIFont.TextStyle(rawValue: TypographyFontStyles.label1.rawValue)
-    public static let label2 = UIFont.TextStyle(rawValue: TypographyFontStyles.label2.rawValue)
+    public static let smilesBody1 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesBody1.rawValue)
+    public static let smilesBody2 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesBody2.rawValue)
+    public static let smilesBody3 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesBody3.rawValue)
+    
+    public static let smilesLabel1 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesLabel1.rawValue)
+    public static let smilesLabel2 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesLabel2.rawValue)
+    public static let smilesLabel3 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesLabel3.rawValue)
     
 }

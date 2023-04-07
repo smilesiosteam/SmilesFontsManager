@@ -5,7 +5,7 @@ import CoreText
 
 public class SmilesFontsManager {
     
-    public static let defaultAppFont: SmilesFonts = SmilesFonts.circular
+    public static var defaultAppFont: SmilesFonts = SmilesFonts.circular
     
     public static func registerFonts() {
         let fonts = getAvailableFontsList()
