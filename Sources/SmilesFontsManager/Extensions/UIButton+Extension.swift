@@ -93,13 +93,16 @@ extension UIButton {
             if let textColor = newValue.textColor {
                 applyTitleColor(textColor, mode: titleColorApplyMode)
             }
-            if newValue.letterSpacing != 0 {
-                let attrString = NSAttributedString(string: title(for: .normal) ?? "")
-                let spacingString = NSMutableAttributedString(attributedString: attrString)
-                let textRange = NSRange(location: 0, length: attrString.string.count)
-                spacingString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
-                self.titleLabel?.attributedText = spacingString
+            let attrString = NSAttributedString(string: self.title(for: .normal) ?? "")
+            let spacingString = NSMutableAttributedString(attributedString: attrString)
+            let textRange = NSRange(location: 0, length: attrString.string.count)
+            spacingString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
+            if let lineHeight = self.typography.textLineHeight {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = lineHeight
+                spacingString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, spacingString.length))
             }
+            self.titleLabel?.attributedText = spacingString
         }
     }
     

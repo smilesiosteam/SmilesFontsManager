@@ -16,6 +16,7 @@ public struct Typography {
     public let pointSize: Float? // base point size for font
     public var letterSpacing: Double = 0
     public var textColor: UIColor?
+    public var textLineHeight: CGFloat?
     public let textStyle: UIFont.TextStyle
     private static let contentSizeCategoryMap: [UIContentSizeCategory: Float] = [
         UIContentSizeCategory.extraSmall: -3,
@@ -71,7 +72,8 @@ public struct Typography {
         letterSpacing: Double = 0,
         maximumPointSize: Float? = nil,
         minimumPointSize: Float? = nil,
-        textColor: UIColor? = nil
+        textColor: UIColor? = nil,
+        lineHeight: CGFloat? = nil
     ) {
         self.name = name
         self.fontName = fontName
@@ -81,6 +83,7 @@ public struct Typography {
         self.letterSpacing = letterSpacing
         self.textColor = textColor
         self.textStyle = UIFont.TextStyle(rawValue: name)
+        self.textLineHeight = lineHeight
     }
     
     /// Convenience method for retrieving the font for the preferred `UIContentSizeCategory`.

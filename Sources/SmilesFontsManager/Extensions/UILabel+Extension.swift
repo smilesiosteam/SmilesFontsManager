@@ -60,13 +60,16 @@ extension UILabel {
                 self.textColor = textColor
             }
             
-            if newValue.letterSpacing != 0 {
-                let attrString = NSAttributedString(string: self.text ?? "")
-                let spacingString = NSMutableAttributedString(attributedString: attrString)
-                let textRange = NSRange(location: 0, length: attrString.string.count)
-                spacingString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
-                self.attributedText = spacingString
+            let attrString = NSAttributedString(string: self.text ?? "")
+            let spacingString = NSMutableAttributedString(attributedString: attrString)
+            let textRange = NSRange(location: 0, length: attrString.string.count)
+            spacingString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
+            if let lineHeight = self.typography.textLineHeight {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = lineHeight
+                spacingString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, spacingString.length))
             }
+            self.attributedText = spacingString
             
         }
     }
