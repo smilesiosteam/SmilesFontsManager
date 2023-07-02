@@ -26,5 +26,6 @@ extension UIFont.TextStyle {
     
     public static let smilesLabel1 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesLabel1.rawValue)
     public static let smilesLabel2 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesLabel2.rawValue)
+    public static let smilesLabel3 = UIFont.TextStyle(rawValue: TypographyFontStyles.smilesLabel3.rawValue)
     
 }
