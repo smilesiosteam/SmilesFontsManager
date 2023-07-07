@@ -53,12 +53,23 @@ extension UITextField {
                 self.textColor = textColor
             }
             
+            let attrString = NSAttributedString(string: self.text ?? "")
+            let spacingString = NSMutableAttributedString(attributedString: attrString)
+            let textRange = NSRange(location: 0, length: attrString.string.count)
+            spacingString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
+            if let lineHeight = self.typography.textLineHeight {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = lineHeight
+                spacingString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, spacingString.length))
+            }
+            self.attributedText = spacingString
+            
         }
     }
     
     // MARK: Functions
     
-    public func attributedText(_ text: NSAttributedString?, style: UIFont.TextStyle,
+    public func attributedText(_ text: NSAttributedString?, style: UIFont.TextStyle, alignment: NSTextAlignment = .natural,
                                textColor: UIColor? = nil,
                                replacingDefaultTextColor: Bool = false) {
         // Update text.
@@ -81,12 +92,22 @@ extension UITextField {
         mutableString.enumerateAttributes(in: textRange, options: [], using: { value, range, _ in
             update(attributedString: mutableString, with: value, in: range, and: typography)
         })
+        
+        mutableString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = alignment
+        if let lineHeight = self.typography.textLineHeight {
+            paragraphStyle.lineSpacing = lineHeight
+        }
+        mutableString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, mutableString.length))
+        
         self.attributedText = mutableString
         if replacingDefaultTextColor {
             let defaultColor = defaultTextColor(in: mutableString)
             let replacementString = replaceTextColor(defaultColor, with: typography.textColor, in: mutableString)
             self.attributedText = replacementString
         }
+        
     }
     
     public func text(_ text: String?, style: UIFont.TextStyle,

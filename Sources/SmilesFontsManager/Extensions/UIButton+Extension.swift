@@ -108,7 +108,7 @@ extension UIButton {
     
     // MARK: Functions
     
-    public func attributedText(_ text: NSAttributedString?, style: UIFont.TextStyle,
+    public func attributedText(_ text: NSAttributedString?, style: UIFont.TextStyle, alignment: NSTextAlignment = .natural,
                                textColor: UIColor? = nil,
                                replacingDefaultTextColor: Bool = false) {
         // Update text.
@@ -132,12 +132,22 @@ extension UIButton {
         mutableString.enumerateAttributes(in: textRange, options: [], using: { value, range, _ in
             update(attributedString: mutableString, with: value, in: range, and: typography)
         })
-        self.setAttributedTitle(mutableString, for: .normal)
+        
+        mutableString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = alignment
+        if let lineHeight = self.typography.textLineHeight {
+            paragraphStyle.lineSpacing = lineHeight
+        }
+        mutableString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, mutableString.length))
+        
+        self.titleLabel?.attributedText = mutableString
         if replacingDefaultTextColor {
             let defaultColor = defaultTextColor(in: mutableString)
             let replacementString = replaceTextColor(defaultColor, with: typography.textColor, in: mutableString)
-            self.setAttributedTitle(replacementString, for: .normal)
+            self.titleLabel?.attributedText = replacementString
         }
+        
     }
     
     public func text(_ text: String?, style: UIFont.TextStyle,
