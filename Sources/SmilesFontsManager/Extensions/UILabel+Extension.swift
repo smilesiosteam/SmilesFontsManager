@@ -64,6 +64,7 @@ extension UILabel {
             let spacingString = NSMutableAttributedString(attributedString: attrString)
             let textRange = NSRange(location: 0, length: attrString.string.count)
             spacingString.addAttribute(.kern, value: self.typography.letterSpacing, range: textRange)
+            spacingString.addAttributes([NSAttributedString.Key.font : newValue.font()!], range: textRange)
             if let lineHeight = self.typography.textLineHeight {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.lineSpacing = lineHeight
@@ -108,7 +109,7 @@ extension UILabel {
             paragraphStyle.lineSpacing = lineHeight
         }
         mutableString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, mutableString.length))
-        
+        mutableString.addAttributes([NSAttributedString.Key.font : typography.font()!], range: textRange)
         self.attributedText = mutableString
         if replacingDefaultTextColor {
             let defaultColor = defaultTextColor(in: mutableString)
