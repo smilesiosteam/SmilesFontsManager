@@ -19,7 +19,7 @@ public enum TypographyFontStyles: String, CaseIterable {
         case .smilesHeadline1:
             return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .medium), fontSize: 32, letterSpacing: -1, lineHeight: 36)
         case .smilesHeadline2:
-            return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .medium), fontSize: 24, letterSpacing: -1, lineHeight: 32)
+            return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .medium), fontSize: 24, letterSpacing: -0.5, lineHeight: 28)
         case .smilesHeadline3:
             return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .medium), fontSize: 18, letterSpacing: -0.5, lineHeight: 24)
         case .smilesHeadline4:
