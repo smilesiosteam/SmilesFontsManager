@@ -41,11 +41,11 @@ public enum TypographyFontStyles: String, CaseIterable {
         case .smilesBody4:
             return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .book), fontSize: 12, letterSpacing: 0, lineHeight: 16)
         case .smilesLabel1:
-            return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .book), fontSize: 11, letterSpacing: 8, lineHeight: 14)
+            return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .book), fontSize: 11, letterSpacing: 0, lineHeight: 14)
         case .smilesLabel2:
-            return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .book), fontSize: 12, letterSpacing: 8, lineHeight: 16)
+            return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .book), fontSize: 12, letterSpacing: 0, lineHeight: 16)
         case .smilesLabel3:
-            return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .book), fontSize: 8, letterSpacing: 8, lineHeight: 14)
+            return Typography(name: self.rawValue, fontName: SmilesFontsManager.defaultAppFont.getFontName(fontStyle: .book), fontSize: 8, letterSpacing: 0, lineHeight: 14)
         }
     }
     
